@@ -17,7 +17,7 @@ class SearchPage:
 
 class SearchTest(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path='C:/Users/gadha/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path='C:/FILEPATH')  # Replace FILEPATH with the path to the Chromedriver file.
         self.driver.get('https://www.google.com')
         self.search_page = SearchPage(self.driver)
 
