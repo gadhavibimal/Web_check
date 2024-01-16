@@ -4,7 +4,7 @@ import unittest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
+#Define BaseSearchPage Class
 class BaseSearchPage:
     def __init__(self, driver, url):
         self.driver = driver
@@ -14,6 +14,7 @@ class BaseSearchPage:
     def search(self, term):
         raise NotImplementedError("Subclasses must implement the search method")
 
+#Define GoogleSearchPage (Subclass of BaseSearchPage)
 class GoogleSearchPage(BaseSearchPage):
     def search(self, term):
         search_box = self.driver.find_element(By.NAME, 'q')
@@ -26,12 +27,12 @@ class GoogleSearchPage(BaseSearchPage):
                 EC.visibility_of_element_located((By.CSS_SELECTOR, 'h3'))
             )
             first_result = self.driver.find_element(By.CSS_SELECTOR, 'h3')
-            print(first_result.text)
-            return first_result.text.strip()
+            return first_result.text.strip()      #Get result for the first element
         except Exception as e:
             print(f"Error retrieving search result: {e}")
             return ''
 
+#Define YahooSearchPage (Subclass of BaseSearchPage)
 class YahooSearchPage(BaseSearchPage):
     def search(self, term):
         search_box = self.driver.find_element(By.NAME, 'p')
@@ -44,7 +45,7 @@ class YahooSearchPage(BaseSearchPage):
                 EC.visibility_of_element_located((By.ID, 'main'))
             )
             element = self.driver.find_element(By.PARTIAL_LINK_TEXT, 'Yahoo')
-            return element.text
+            return element.text      #Get result for the first element
         except Exception as e:
             print(f"Error retrieving search result: {e}")
             return ''
@@ -52,7 +53,7 @@ class YahooSearchPage(BaseSearchPage):
 class SearchTest(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(
-            executable_path='C:/Users/gadha/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe')
+            executable_path='C:/FILEPATH'/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe'))  # Replace FILEPATH with the path to the Chromedriver file.
 
     def test_google_search(self):
         expected_result = 'Google'
