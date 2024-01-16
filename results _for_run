@@ -1,0 +1,17 @@
+C:\Users\gadha\IdeaProjects\SeleniumTestProject\venv\Scripts\python.exe C:/Users/gadha/AppData/Roaming/JetBrains/IntelliJIdea2023.3/plugins/python/helpers/pycharm/_jb_pytest_runner.py --path C:\Users\gadha\IdeaProjects\SeleniumTestProject\Selenium\google_yahoo_test.py 
+Testing started at 1:08 PM ...
+Launching pytest with arguments C:\Users\gadha\IdeaProjects\SeleniumTestProject\Selenium\google_yahoo_test.py --no-header --no-summary -q in C:\Users\gadha\IdeaProjects\SeleniumTestProject\Selenium
+
+============================= test session starts =============================
+collecting ... collected 2 items
+
+google_yahoo_test.py::SearchTest::test_google_search 
+google_yahoo_test.py::SearchTest::test_yahoo_search 
+
+======================= 2 passed, 44 warnings in 12.71s =======================
+PASSED              [ 50%]{'driver': <selenium.webdriver.chrome.webdriver.WebDriver (session="d130abdbf103139190b5ac7ad5dfd24b")>, 'url': 'https://www.google.com'}
+First result text: 'Google'
+PASSED               [100%]{'driver': <selenium.webdriver.chrome.webdriver.WebDriver (session="d04bac4e1e65305fd845399b6c64afe2")>, 'url': 'https://search.yahoo.com'}
+First result text: 'Yahoo'
+
+Process finished with exit code 0
